@@ -1,0 +1,10 @@
+00_Raw_Data/
+01_Clean_Data/
+*.csv
+*.zip
+__pycache__/
+.vscode/
+
+*.pbix
+
+*.pbix
