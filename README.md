@@ -1,69 +1,77 @@
-Cyclistic Bike-Share Case Study
+Cyclistic Bike-Share Analysis
 Google Data Analytics Capstone Project
 Author: Arnis Hasani
-Tools: Python | SQL Server | Power BI
+Tools: Python · SQL Server · Power BI
 
-Project Overview
-Cyclistic is a bike-share company in Chicago with over 5,800 bicycles and 600 stations. The marketing team wants to get more annual members because members bring in more steady revenue than casual riders.
 
-As a data analyst, my job was to look at 12 months of trip data (over 5.5 million rows) to see how annual members and casual riders use the bikes differently. Based on those patterns, I came up with simple recommendations to help convert casual riders into annual members.
+What is this project?
 
-The Main Question
-How do annual members and casual riders use Cyclistic bikes differently, and how can we use those differences to convince casual riders to buy a membership?
+This is my capstone project for the Google Data Analytics Certificate.
 
-Tools Used
+Cyclistic is a bike-share company in Chicago with 5,800 bikes and 600 stations.
+The business problem is simple — casual riders are less profitable than annual members
+and the marketing team wants to convert them.
 
-Python: Used to combine 12 separate CSV files into one dataset, remove bad data (like negative ride times), and add new fields for analysis.
+I went beyond the basic requirements. Instead of using a sample I processed the full
+12 months of trip data — over 5.5 million rows. I built a Python cleaning pipeline,
+stored everything in SQL Server, and built a Power BI dashboard for the final presentation.
 
-SQL Server (SSMS): Used to store the clean data and run queries to calculate trip counts, average ride lengths, and peak usage hours.
 
-Power BI: Used to build an interactive dashboard with simple visual charts for stakeholders.
+The question I was answering
 
-Key Findings
+How do annual members and casual riders use the bikes differently — and what does
+that tell us about how to convert casuals into members?
 
-Total Volume: Annual members make up 64% of total trips, while casual riders account for 36%.
 
-Trip Length: Casual riders ride for longer periods, averaging 19.1 minutes per trip compared to 12.0 minutes for members.
+What I did
 
-Weekly Pattern: Members ride mostly Monday through Friday for work commutes. Casual riders peak on Saturday and Sunday for leisure.
+Python — combined 12 separate monthly CSV files into one dataset, removed bad data
+like negative ride times, and added calculated fields for analysis.
 
-Hourly Pattern: Members show clear spikes at 8 AM and 5 PM rush hours. Casual trips grow steadily throughout the day and peak in the late afternoon.
+SQL Server — stored the clean data and ran queries to calculate trip counts,
+average ride lengths, and peak usage hours by rider type.
 
-Seasonality: Casual riding surges in the summer and drops off heavily in the winter, while member riding stays more consistent year-round.
+Power BI — built an interactive dashboard to present the findings.
 
-Dashboard Preview
 
-Recommendations
+What I found
 
-Weekend and Summer Promotions: Offer casual riders unlocking bikes on summer weekends a special discount or credit toward an annual membership.
+Members make up 64% of total trips, casuals 36%.
 
-Commuter Trial Pass: Target casual riders who unlock bikes during weekday rush hours (8 AM and 5 PM) with a discounted one-month trial pass.
+Casual riders average 19.1 minutes per trip vs 12 minutes for members.
+They ride longer but commit less — price or habit is the barrier, not interest.
 
-Ride Time Rewards: Give casual riders points for total minutes ridden, which they can convert into money off an annual pass.
+Members ride Monday to Friday for commuting. Casuals peak Saturday and Sunday for leisure.
+These are two completely different use cases in the same product.
 
-Project Structure
-Google-Case-Study/
+Members show clear spikes at 8 AM and 5 PM. Casual usage builds slowly through the day.
 
-00_Raw_Data/ (12 raw monthly CSV files)
+Casual riding drops heavily in winter while member riding stays consistent year-round.
+Seasonality is a major factor for this segment.
 
-01_Clean_Data/ (combined clean dataset)
 
-02_Scripts/01_clean_data.py (Python script)
+What I would recommend to the business
 
-03_SQL/01_analysis.sql (SQL analysis script)
+Target casual riders who already use bikes during weekday rush hours — they are
+behaving like members without the membership. A one month discounted trial pass
+aimed at this group would convert the easiest wins first.
 
-04_PowerBI/Dashboard.pbix (Power BI file)
+Run summer weekend promotions specifically — that is when casual volume is highest
+and willingness to engage is strongest.
 
-04_PowerBI/dashboard_preview.png (dashboard image)
+Add a ride time rewards system — casuals ride longer so they accumulate points faster.
+Give them something to unlock and they have a reason to come back.
 
-.gitignore (keeps large dataset files off GitHub)
 
-README.md (project overview)
+Project structure
 
-How to Run
+00_Raw_Data — 12 raw monthly CSV files
+01_Clean_Data — combined clean dataset
+02_Scripts — Python cleaning script
+SQL — SQL analysis queries
+03_PowerBI — Power BI dashboard file and preview
 
-Run the script in 02_Scripts/01_clean_data.py to clean and combine the raw data.
 
-Run the queries in 03_SQL/01_analysis.sql in SQL Server Management Studio.
-
-Open 04_PowerBI/Dashboard.pbix in Power BI Desktop to view the interactive dashboard.
+Tools
+Python, pandas, SQL Server, Power BI
+Dataset: Cyclistic trip data — 12 months, 5.5 million rows
